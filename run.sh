@@ -1,7 +1,7 @@
 #!/bin/bash
 _interupt() { 
     echo "Shutdown $child_proc"
-    kill -TERM "$child_proc" 2>/dev/null
+    kill -TERM $child_proc
     exit
 }
 
@@ -33,7 +33,7 @@ else
   wallet3=$(${PROJECT_DIR}/build/bin/tomo account list --datadir ./nodes/3 | head -n 1 | awk -v FS="({|})" '{print $2}')
 fi
 
-VERBOSITY=3
+VERBOSITY=4
 
 echo Starting the bootnode ...
 ${PROJECT_DIR}/build/bin/bootnode -nodekey ./bootnode.key &
