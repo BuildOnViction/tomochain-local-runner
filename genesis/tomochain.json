@@ -12,7 +12,8 @@
       "epoch": 10,
       "rewardCheckpoint": 10,
       "reward": 10,
-      "gap": 5
+      "gap": 5,
+      "foudationWalletAddr": "0x0000000000000000000000000000000000000068"
     }
   },
   "nonce": "0x0",
