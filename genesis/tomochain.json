@@ -9,9 +9,9 @@
     "byzantiumBlock": 4,
     "posv": {
       "period": 2,
-      "epoch": 10,
-      "rewardCheckpoint": 10,
-      "reward": 10,
+      "epoch": 90,
+      "reward": 250,
+      "rewardCheckpoint": 90,
       "gap": 5,
       "foudationWalletAddr": "0x0000000000000000000000000000000000000068"
     }
