@@ -33,7 +33,7 @@ else
   wallet3=$(${PROJECT_DIR}/build/bin/tomo account list --datadir ./nodes/3 | head -n 1 | awk -v FS="({|})" '{print $2}')
 fi
 
-VERBOSITY=4
+VERBOSITY=3
 GASPRICE="1"
 
 echo Starting the bootnode ...

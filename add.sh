@@ -22,4 +22,4 @@ ${PROJECT_DIR}/build/bin/tomo --bootnodes "enode://7d8ffe6d28f738d8b7c32f11fb6da
     --syncmode 'full' \ 
     --datadir ./nodes/4 --networkid 89 --port 30306 --rpc --rpccorsdomain "*" \
     --rpcaddr 0.0.0.0 --rpcport 8548 --rpcvhosts "*" --unlock "${wallet4}" --password ./.pwd \
-    --mine --gasprice "${GASPRICE}" --targetgaslimit "420000000" --vmdebug --verbosity ${VERBOSITY}
+    --mine --gasprice "${GASPRICE}" --targetgaslimit "420000000" --verbosity ${VERBOSITY}
