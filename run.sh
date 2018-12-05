@@ -73,7 +73,7 @@ ${TOMOCHAIN_PROJECT_DIR}/build/bin/tomo \
     --targetgaslimit "420000000" --verbosity ${VERBOSITY} &
 child_proc="$child_proc $!"
 
-if [ $1 == 'all' ]; then
+if [ "$1" == "all" ]; then
     TOMOSCAN_PROJECT_DIR="${HOME}/projects/tomoscan"
     TOMOMASTER_PROJECT_DIR="${HOME}/projects/tomomaster"
 
