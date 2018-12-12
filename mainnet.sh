@@ -55,6 +55,7 @@ echo Starting the nodes ...
 ${TOMOCHAIN_PROJECT_DIR}/build/bin/tomo \
     --bootnodes "enode://7d8ffe6d28f738d8b7c32f11fb6daa6204abae990a842025b0a969aabdda702aca95a821746332c2e618a92736538761b1660aa9defb099bc46b16db28992bc9@127.0.0.1:30301" --syncmode "full" \
     --datadir ./nodes/1 --networkid 88 --port 30303 \
+    --announce-txs \
     --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcport 8545 --rpcvhosts "*" \
     --ws --wsaddr 0.0.0.0 --wsport 8546 --wsorigins "*" --unlock "${wallet1}" \
 	--ethstats "TomoChain-01:test2test@localhost:3004" \
