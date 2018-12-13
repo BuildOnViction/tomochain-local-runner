@@ -36,7 +36,7 @@ else
 fi
 
 VERBOSITY=3
-GASPRICE="1"
+GASPRICE="2500"
 
 echo Starting netstats ...
 if [ "$(docker ps -q -f name=netstats)" ]; then
@@ -65,6 +65,7 @@ child_proc="$child_proc $!"
 ${TOMOCHAIN_PROJECT_DIR}/build/bin/tomo \
     --bootnodes "enode://7d8ffe6d28f738d8b7c32f11fb6daa6204abae990a842025b0a969aabdda702aca95a821746332c2e618a92736538761b1660aa9defb099bc46b16db28992bc9@127.0.0.1:30301" --syncmode "full" \
     --datadir ./nodes/2 --networkid 88 --port 30304 \
+    --announce-txs \
     --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcport 8547 --rpcvhosts "*" \
     --unlock "${wallet2}" --password ./.pwd --mine --gasprice "${GASPRICE}" --targetgaslimit "420000000" \
 	--ethstats "TomoChain-02:test2test@localhost:3004" \
@@ -74,6 +75,7 @@ child_proc="$child_proc $!"
 ${TOMOCHAIN_PROJECT_DIR}/build/bin/tomo \
     --bootnodes "enode://7d8ffe6d28f738d8b7c32f11fb6daa6204abae990a842025b0a969aabdda702aca95a821746332c2e618a92736538761b1660aa9defb099bc46b16db28992bc9@127.0.0.1:30301" \
     --syncmode "full" --datadir ./nodes/3 --networkid 88 --port 30305 \
+    --announce-txs \
     --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcport 8548 --rpcvhosts "*" \
     --unlock "${wallet3}" --password ./.pwd --mine --gasprice "${GASPRICE}" \
 	--ethstats "TomoChain-03:test2test@localhost:3004" \
@@ -83,6 +85,7 @@ child_proc="$child_proc $!"
 ${TOMOCHAIN_PROJECT_DIR}/build/bin/tomo \
     --bootnodes "enode://7d8ffe6d28f738d8b7c32f11fb6daa6204abae990a842025b0a969aabdda702aca95a821746332c2e618a92736538761b1660aa9defb099bc46b16db28992bc9@127.0.0.1:30301" \
     --syncmode "full" --datadir ./nodes/4 --networkid 88 --port 30306 \
+    --announce-txs \
     --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcport 8549 --rpcvhosts "*" \
     --unlock "${wallet4}" --password ./.pwd --mine --gasprice "${GASPRICE}" \
 	--ethstats "TomoChain-04:test2test@localhost:3004" \
@@ -92,6 +95,7 @@ child_proc="$child_proc $!"
 ${TOMOCHAIN_PROJECT_DIR}/build/bin/tomo \
     --bootnodes "enode://7d8ffe6d28f738d8b7c32f11fb6daa6204abae990a842025b0a969aabdda702aca95a821746332c2e618a92736538761b1660aa9defb099bc46b16db28992bc9@127.0.0.1:30301" \
     --syncmode "full" --datadir ./nodes/5 --networkid 88 --port 30307 \
+    --announce-txs \
     --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcport 8550 --rpcvhosts "*" \
     --unlock "${wallet5}" --password ./.pwd --mine --gasprice "${GASPRICE}" \
 	--ethstats "TomoChain-05:test2test@localhost:3004" \
