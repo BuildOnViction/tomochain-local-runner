@@ -40,7 +40,7 @@ GASPRICE="2500"
 
 echo Starting netstats ...
 if [ "$(docker ps -q -f name=netstats)" ]; then
-    if [ "$(docker ps -aq -f 'status=exited' -f name=netstats)" ]; then
+    if [ ! "$(docker ps -aq -f 'status=running' -f name=netstats)" ]; then
         docker start netstats
     fi
 else
