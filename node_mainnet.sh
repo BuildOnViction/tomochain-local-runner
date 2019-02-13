@@ -15,7 +15,7 @@ else
   wallet1=$(${TOMOCHAIN_PROJECT_DIR}/build/bin/tomo account list --datadir ./nodes/1 | head -n 1 | awk -v FS="({|})" '{print $2}')
 fi
 
-VERBOSITY=3
+VERBOSITY=2
 GASPRICE="2500"
 
 echo Starting netstats ...
