@@ -15,7 +15,7 @@ else
   wallet1=$(${TOMOCHAIN_PROJECT_DIR}/build/bin/tomo account list --datadir ./nodes/1 | head -n 1 | awk -v FS="({|})" '{print $2}')
 fi
 
-VERBOSITY=2
+VERBOSITY=3
 GASPRICE="2500"
 
 echo Starting netstats ...
@@ -35,5 +35,5 @@ ${TOMOCHAIN_PROJECT_DIR}/build/bin/tomo \
     --store-reward \
     --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcport 8545 --rpcvhosts "*" \
     --ws --wsaddr 0.0.0.0 --wsport 8546 --wsorigins "*" --unlock "${wallet1}" \
-	--ethstats "TomoChain-Local:test2test@localhost:3004" \
+    --ethstats "TomoChain-Local:test2test@localhost:3004" \
     --password ./.pwd --mine --gasprice "${GASPRICE}" --targetgaslimit "420000000" --verbosity ${VERBOSITY}
