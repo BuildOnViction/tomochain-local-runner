@@ -30,10 +30,12 @@ fi
 echo Starting the nodes ...
 ${TOMOCHAIN_PROJECT_DIR}/build/bin/tomo \
     --bootnodes "enode://c8f2f0643527d4efffb8cb10ef9b6da4310c5ac9f2e988a7f85363e81d42f1793f64a9aa127dbaff56b1e8011f90fe9ff57fa02a36f73220da5ff81d8b8df351@104.248.98.60:30301" --syncmode "full" \
-    --datadir ./nodes/1 --networkid 88 --port 30303 \
-    --announce-txs \
-    --store-reward \
-    --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcport 8545 --rpcvhosts "*" \
-    --ws --wsaddr 0.0.0.0 --wsport 8546 --wsorigins "*" --unlock "${wallet1}" \
+    --datadir ./nodes/1 --networkid 88 \
     --ethstats "TomoChain-Local:test2test@localhost:3004" \
+    --unlock "${wallet1}" \
     --password ./.pwd --mine --gasprice "${GASPRICE}" --targetgaslimit "420000000" --verbosity ${VERBOSITY}
+#    --datadir ./nodes/1 --networkid 88 --port 30303 \
+#    --announce-txs \
+#    --store-reward \
+#    --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcport 8545 --rpcvhosts "*" \
+#    --ws --wsaddr 0.0.0.0 --wsport 8546 --wsorigins "*" --unlock "${wallet1}" \
