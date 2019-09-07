@@ -53,7 +53,7 @@ ${TOMOCHAIN_PROJECT_DIR}/build/bin/tomo \
     --tomox --tomox.datadir "$WORK_DIR/nodes/1/tomox" --tomox.dbengine "leveldb" \
     --announce-txs \
     --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcport 8545 --rpcvhosts "*" \
-    --rpcapi "db,eth,net,web3,personal,debug" \
+    --rpcapi "personal,db,eth,net,web3,txpool,miner,tomoX" \
     --gcmode "archive" \
     --ws --wsaddr 0.0.0.0 --wsport 8546 --wsorigins "*" --unlock "${wallet1}" \
 	--ethstats "sun:test2test@localhost:3004" \
