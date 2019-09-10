@@ -4,3 +4,4 @@ rm -rf ./nodes/2
 rm -rf ./nodes/3
 rm -rf ./nodes/4
 rm -rf ./nodes/5
+docker exec -it dba304a6565c mongo --eval "db.items.remove({});db.orders.remove({})" tomodex
