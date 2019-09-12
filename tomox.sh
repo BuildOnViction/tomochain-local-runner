@@ -89,5 +89,6 @@ ${TOMOCHAIN_PROJECT_DIR}/build/bin/tomo \
     --rpcapi "personal,db,eth,net,web3,txpool,miner,tomoX" \
     --tomox --tomox.datadir "$WORK_DIR/nodes/4/tomox" --tomox.dbengine "mongodb" \
     --unlock "${wallet4}" --password ./.pwd --mine --gasprice "${GASPRICE}" \
-	--ethstats "tomox-fullnode:test2test@localhost:3004" \
+    --ethstats "tomox-fullnode:test2test@localhost:3004" \
     --targetgaslimit "420000000" --verbosity ${VERBOSITY}
+
