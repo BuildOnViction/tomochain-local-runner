@@ -24,7 +24,7 @@ else
   wallet4=$(${TOMOCHAIN_PROJECT_DIR}/build/bin/tomo account list --datadir ./nodes/4 | head -n 1 | awk -v FS="({|})" '{print $2}')
 fi
 
-VERBOSITY=3
+VERBOSITY=4
 
 GASPRICE="250000000"
 
