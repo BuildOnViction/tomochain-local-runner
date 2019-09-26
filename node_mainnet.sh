@@ -16,7 +16,7 @@ else
 fi
 
 VERBOSITY=3
-GASPRICE="2500"
+GASPRICE="250000000"
 
 echo Starting netstats ...
 if [ "$(docker ps -aq -f name=netstats)" ]; then
