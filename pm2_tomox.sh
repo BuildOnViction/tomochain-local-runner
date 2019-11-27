@@ -3,7 +3,8 @@ touch .pwd
 export $(cat .env | xargs)
 
 WORK_DIR=$PWD
-TOMOCHAIN_PROJECT_DIR="${HOME}/go/src/github.com/ethereum/go-ethereum"
+TOMOCHAIN_PROJECT_DIR="${HOME}/go/src/github.com/tomochain/tomochain"
+GO111MODULE=on
 cd $TOMOCHAIN_PROJECT_DIR && make all
 cd $WORK_DIR
 
@@ -24,7 +25,7 @@ else
   wallet4=$(${TOMOCHAIN_PROJECT_DIR}/build/bin/tomo account list --datadir ./nodes/4 | head -n 1 | awk -v FS="({|})" '{print $2}')
 fi
 
-VERBOSITY=3
+VERBOSITY=4
 
 GASPRICE="250000000"
 
@@ -47,7 +48,7 @@ pm2 start ${TOMOCHAIN_PROJECT_DIR}/build/bin/tomo --name node01 -- \
     --tomox --tomox.datadir "$WORK_DIR/nodes/1/tomox" --tomox.dbengine "leveldb" \
     --announce-txs \
     --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcport 8545 --rpcvhosts "*" \
-    --rpcapi "personal,db,eth,net,web3,txpool,miner,tomoX" \
+    --rpcapi "personal,db,eth,net,web3,txpool,miner,tomox" \
     --ws --wsaddr 0.0.0.0 --wsport 8546 --wsorigins "*" --unlock "${wallet1}" \
 	--ethstats "sun:test2test@localhost:3004" \
     --password ./.pwd --mine --gasprice "${GASPRICE}" --targetgaslimit "420000000" --verbosity ${VERBOSITY}
@@ -74,9 +75,8 @@ pm2 start ${TOMOCHAIN_PROJECT_DIR}/build/bin/tomo --name node04 -- \
     --bootnodes "enode://7d8ffe6d28f738d8b7c32f11fb6daa6204abae990a842025b0a969aabdda702aca95a821746332c2e618a92736538761b1660aa9defb099bc46b16db28992bc9@127.0.0.1:30301" \
     --syncmode "full" --datadir ./nodes/4 --networkid 89 --port 30306 \
     --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcport 8549 --rpcvhosts "*" \
-    --rpcapi "personal,db,eth,net,web3,txpool,miner,tomoX" \
+    --rpcapi "personal,db,eth,net,web3,txpool,miner,tomox" \
     --tomox --tomox.datadir "$WORK_DIR/nodes/4/tomox" --tomox.dbengine "mongodb" \
     --unlock "${wallet4}" --password ./.pwd --mine --gasprice "${GASPRICE}" \
     --ethstats "tomox-fullnode:test2test@localhost:3004" \
     --targetgaslimit "420000000" --verbosity ${VERBOSITY}
-
