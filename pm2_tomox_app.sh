@@ -14,7 +14,7 @@ cd /home/vagrant/projects/tomox-sdk-ui && pm2 start npm --name tomox-sdk-ui -- s
 echo Sleep 30 seconds ...
 sleep 30
 echo Starting bot ...
-cd /home/vagrant/projects/tomox-market-maker && pm2 start cmd.js --name bot_BTCTOMO -- bot BTC-TOMO
+cd /home/vagrant/projects/tomox-market-maker && pm2 start cmd.js --name bot_TOMOBTC -- bot TOMO-BTC
 cd /home/vagrant/projects/tomox-market-maker && pm2 start cmd.js --name bot_ETHTOMO -- bot ETH-TOMO
 cd /home/vagrant/projects/tomox-market-maker && pm2 start cmd.js --name bot_XRPTOMO -- bot XRP-TOMO
 cd /home/vagrant/projects/tomox-market-maker && pm2 start cmd.js --name bot_LTCTOMO -- bot LTC-TOMO
@@ -25,3 +25,6 @@ cd /home/vagrant/projects/tomox-market-maker && pm2 start cmd.js --name bot_BCHT
 cd /home/vagrant/projects/tomox-market-maker && pm2 start cmd.js --name bot_EOSTOMO -- bot EOS-TOMO
 cd /home/vagrant/projects/tomox-market-maker && pm2 start cmd.js --name bot_ETHBTC -- bot ETH-BTC 
 cd /home/vagrant/projects/tomox-market-maker && pm2 start cmd.js --name bot_XRPBTC -- bot XRP-BTC 
+cd /home/vagrant/projects/tomox-market-maker && pm2 start cmd.js --name bot_TOMOUSD -- bot TOMO-USD
+cd /home/vagrant/projects/tomox-market-maker && pm2 start cmd.js --name bot_BTCUSD -- bot BTC-USD
+cd /home/vagrant/projects/tomox-market-maker && pm2 start cmd.js --name bot_ETHUSD -- bot ETH-USD

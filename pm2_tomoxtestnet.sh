@@ -14,10 +14,10 @@ then
   wallet2=$(${TOMOCHAIN_PROJECT_DIR}/build/bin/tomo account import --password .pwd --datadir ./nodes/2 <(echo ${PRIVATE_KEY_2}) | awk -v FS="({|})" '{print $2}')
   wallet3=$(${TOMOCHAIN_PROJECT_DIR}/build/bin/tomo account import --password .pwd --datadir ./nodes/3 <(echo ${PRIVATE_KEY_3}) | awk -v FS="({|})" '{print $2}')
   wallet4=$(${TOMOCHAIN_PROJECT_DIR}/build/bin/tomo account import --password .pwd --datadir ./nodes/4 <(echo ${PRIVATE_KEY_4}) | awk -v FS="({|})" '{print $2}')
-  ${TOMOCHAIN_PROJECT_DIR}/build/bin/tomo --datadir ./nodes/1 init ./genesis/genesis.json
-  ${TOMOCHAIN_PROJECT_DIR}/build/bin/tomo --datadir ./nodes/2 init ./genesis/genesis.json
-  ${TOMOCHAIN_PROJECT_DIR}/build/bin/tomo --datadir ./nodes/3 init ./genesis/genesis.json
-  ${TOMOCHAIN_PROJECT_DIR}/build/bin/tomo --datadir ./nodes/4 init ./genesis/genesis.json
+  ${TOMOCHAIN_PROJECT_DIR}/build/bin/tomo --datadir ./nodes/1 init ./genesis/testnet.json
+  ${TOMOCHAIN_PROJECT_DIR}/build/bin/tomo --datadir ./nodes/2 init ./genesis/testnet.json
+  ${TOMOCHAIN_PROJECT_DIR}/build/bin/tomo --datadir ./nodes/3 init ./genesis/testnet.json
+  ${TOMOCHAIN_PROJECT_DIR}/build/bin/tomo --datadir ./nodes/4 init ./genesis/testnet.json
 else
   wallet1=$(${TOMOCHAIN_PROJECT_DIR}/build/bin/tomo account list --datadir ./nodes/1 | head -n 1 | awk -v FS="({|})" '{print $2}')
   wallet2=$(${TOMOCHAIN_PROJECT_DIR}/build/bin/tomo account list --datadir ./nodes/2 | head -n 1 | awk -v FS="({|})" '{print $2}')
